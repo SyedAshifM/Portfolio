@@ -64,14 +64,20 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                   </span>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-3">
-                <a className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-zinc-950" href={project.github} target="_blank" rel="noreferrer">
-                  <Github size={16} /> GitHub
-                </a>
-                <a className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-white" href={project.live} target="_blank" rel="noreferrer">
-                  <ExternalLink size={16} /> Live Demo
-                </a>
-              </div>
+              {(project.github || project.live) && (
+                <div className="flex flex-wrap gap-3">
+                  {project.github && (
+                    <a className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-zinc-950" href={project.github} target="_blank" rel="noreferrer">
+                      <Github size={16} /> GitHub
+                    </a>
+                  )}
+                  {project.live && (
+                    <a className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-white" href={project.live} target="_blank" rel="noreferrer">
+                      <ExternalLink size={16} /> Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>

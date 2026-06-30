@@ -34,14 +34,20 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
-              <div className="flex gap-3">
-                <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
-                  <Github size={16} /> GitHub
-                </a>
-                <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200">
-                  <ExternalLink size={16} /> Live Demo
-                </a>
-              </div>
+              {(project.github || project.live) && (
+                <div className="flex gap-3">
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/10">
+                      <Github size={16} /> GitHub
+                    </a>
+                  )}
+                  {project.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200">
+                      <ExternalLink size={16} /> Live Demo
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           </motion.article>
         ))}

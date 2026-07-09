@@ -19,4 +19,4 @@ npm run build
 
 Portfolio content lives in `src/data/portfolio.ts`, including profile details, skills, experience, projects, links, and asset references.
 
-Replace `public/resume.pdf` with the final resume PDF when ready.
+The downloadable resume lives at `public/SyedAshif Resume.pdf`.

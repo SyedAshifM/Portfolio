@@ -1,6 +1,6 @@
 import profileImage from '../assets/Media-beard-trimmed.jpg';
-import hrmsImage from '../assets/project-hrms.jpg';
-import orbitImage from '../assets/project-orbit.jpg';
+import hrmsImage from '../assets/project-hrms-modern-anonymized.jpg';
+import orbitImage from '../assets/project-orbit-modern.jpg';
 import portfolioImage from '../assets/project-portfolio.jpg';
 
 export const portfolio = {

@@ -1,7 +1,6 @@
 import profileImage from '../assets/Media-beard-trimmed.jpg';
 import hrmsImage from '../assets/project-hrms-modern-anonymized.jpg';
 import orbitImage from '../assets/project-orbit-modern.jpg';
-import portfolioImage from '../assets/project-portfolio.jpg';
 
 export const portfolio = {
   name: 'Syed Ashif',
@@ -18,7 +17,7 @@ export const portfolio = {
     'I build responsive, user-friendly web applications with React, Angular, TypeScript, and clean frontend architecture for enterprise product teams.',
   about:
     'Results-driven frontend developer with 2+ years of professional experience designing and developing responsive web applications. Skilled in React.js, Angular, TypeScript, JavaScript, HTML, and CSS, with hands-on experience in Angular CLI, NGXS state management, React Hooks, REST API integration, CI/CD workflows, and scalable UI systems for enterprise applications.',
-  highlights: ['2+ Years Experience', 'React Developer', 'Angular Developer', 'Enterprise Applications', 'HRMS', 'ORBit ETL', 'ORP Portal', 'Sierra Digital Inc'],
+  highlights: ['2+ Years Experience', 'React Developer', 'Angular Developer', 'Enterprise Applications', 'HRMS', 'ORBit ETL', 'Sierra Digital Inc'],
   skills: [
     { group: 'Frontend', items: ['React.js', 'Angular', 'TypeScript', 'JavaScript', 'Tailwind CSS', 'Angular CLI', 'NGXS'] },
     { group: 'Backend', items: ['Node.js', 'Express.js', 'REST APIs'] },
@@ -34,7 +33,6 @@ export const portfolio = {
         'Built HRMS onboarding workflows with React.js, TypeScript, JavaScript, Tailwind CSS, Express.js, REST APIs, Nginx, and PM2.',
         'Implemented React Hooks-based state and lifecycle patterns to keep enterprise UI flows predictable, reusable, and maintainable.',
         'Designed and developed ORBit, a scalable ETL platform for data extraction, transformation, loading, monitoring, logging, and error handling.',
-        'Developed ORP, a B2B Owners Relations Portal using Angular, TypeScript, Angular CLI, NGXS, shared modules, services, and role-based access control.',
         'Created reusable UI components, validation-heavy forms, stepper flows, dashboard views, and API-driven modules for complex business workflows.',
         'Improved frontend performance with modular architecture, lazy loading, optimized data binding, and clean component boundaries.',
         'Supported Git-based collaboration, Azure DevOps CI/CD pipelines, responsive UI delivery, and reliable enterprise deployments.',
@@ -63,18 +61,6 @@ export const portfolio = {
       details:
         'Designed and developed responsive React interfaces for ETL workflow management, including data cleansing, mapping, enrichment, real-time and batch processing support, job monitoring, logging, error handling, performance analysis, and Azure DevOps CI/CD release support.',
       tech: ['React.js', 'React Hooks', 'JavaScript', 'Docker', 'Azure DevOps', 'ETL'],
-      github: '',
-      live: '',
-    },
-    {
-      title: 'ORP',
-      subtitle: 'Owners Relations Portal',
-      image: portfolioImage,
-      description:
-        'A B2B enterprise portal for owner relations, banking details, payment history, ticketing, and financial workflows.',
-      details:
-        'Developed a scalable Angular and TypeScript enterprise application using modular component architecture, shared modules, services, secure role-based access, payment review workflows, real-time backend integration, ticketing features, REST API integration with HttpClient, lazy loading, and optimized data binding for high-volume interfaces.',
-      tech: ['Angular', 'TypeScript', 'Angular CLI', 'NGXS', 'REST APIs', 'Azure DevOps'],
       github: '',
       live: '',
     },

@@ -10,30 +10,61 @@ const navItems = ['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 18);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 18);
+
+      const sectionIds = navItems.map((item) => item.toLowerCase());
+      const scrollPosition = window.scrollY + 140;
+      const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8;
+      let currentSection = 'home';
+
+      for (const sectionId of sectionIds) {
+        const section = document.getElementById(sectionId);
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = sectionId;
+        }
+      }
+
+      setActiveSection(isNearBottom ? 'contact' : currentSection);
+    };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
   }, []);
 
-  const navLink = (item: string) => (
-    <Link
-      key={item}
-      to={item.toLowerCase()}
-      smooth
-      spy
-      offset={-84}
-      duration={500}
-      activeClass="text-white after:scale-x-100"
-      onClick={() => setOpen(false)}
-      className="relative cursor-pointer py-2 text-sm font-medium text-zinc-400 transition hover:text-white after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-gradient after:transition-transform"
-    >
-      {item}
-    </Link>
-  );
+  const navLink = (item: string) => {
+    const sectionId = item.toLowerCase();
+    const isActive = activeSection === sectionId;
+
+    return (
+      <Link
+        key={item}
+        to={sectionId}
+        smooth
+        offset={-84}
+        duration={500}
+        onClick={() => {
+          setActiveSection(sectionId);
+          setOpen(false);
+        }}
+        className={`relative cursor-pointer py-2 text-sm font-medium transition after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-left after:bg-brand-gradient after:transition-transform ${
+          isActive ? 'text-white after:scale-x-100' : 'text-zinc-400 after:scale-x-0 hover:text-white'
+        }`}
+      >
+        {item}
+      </Link>
+    );
+  };
 
   return (
     <header className="fixed left-0 right-0 top-0 z-40 px-4 py-4">

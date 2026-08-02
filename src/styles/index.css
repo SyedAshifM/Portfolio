@@ -226,6 +226,15 @@ button {
   }
 }
 
+@media (max-width: 480px) {
+  .typing {
+    width: auto;
+    animation: none;
+    border-right: 0;
+    white-space: normal;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

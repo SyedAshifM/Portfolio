@@ -27,14 +27,14 @@ export const Hero = () => {
       <div className="relative mx-auto grid min-h-[calc(100vh-9rem)] max-w-7xl items-center gap-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
         <motion.div initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.7, ease: 'easeOut' }} className="min-w-0 max-w-3xl">
           <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.04] px-4 py-2 text-sm text-zinc-300 shadow-card backdrop-blur">
-            <Sparkles size={16} className="text-accent" /> Available for thoughtful frontend work
+            <Sparkles size={16} className="text-accent" /> Available for full-stack product work
           </div>
           <p className="mb-3 text-lg font-medium text-zinc-300">Hello, I'm</p>
           <h1 className="text-balance text-[clamp(3.5rem,15vw,4.5rem)] font-bold leading-[0.95] text-white sm:text-7xl lg:text-8xl">
             {portfolio.name}
           </h1>
-          <div className="mt-5 min-h-12 max-w-full overflow-hidden text-[clamp(2rem,8vw,2.75rem)] font-semibold text-transparent sm:text-4xl">
-            <span className="typing-gradient typing inline-block max-w-full whitespace-nowrap bg-brand-gradient bg-clip-text">{portfolio.role}</span>
+          <div className="mt-5 max-w-3xl text-[clamp(1.9rem,7vw,2.75rem)] font-semibold leading-tight text-transparent sm:text-4xl">
+            <span className="typing-gradient inline-block bg-brand-gradient bg-clip-text">{portfolio.role}</span>
           </div>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">{portfolio.intro}</p>
           <div className="mt-10 flex w-full flex-col gap-4 sm:w-auto sm:flex-row">
@@ -55,7 +55,7 @@ export const Hero = () => {
           </div>
           <div className="absolute -bottom-6 left-1/2 w-[min(74vw,20rem)] -translate-x-1/2 rounded-brand border border-line bg-white/[0.06] px-4 py-3 shadow-card backdrop-blur-xl sm:left-4 sm:w-auto sm:translate-x-0 sm:px-5 sm:py-4">
             <p className="text-xs text-zinc-400 sm:text-sm">Focus</p>
-            <p className="text-sm font-semibold text-white sm:text-base">React + Enterprise UI</p>
+            <p className="text-sm font-semibold text-white sm:text-base">Full Stack Web Apps</p>
           </div>
         </motion.div>
       </div>

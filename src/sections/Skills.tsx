@@ -4,8 +4,8 @@ import { portfolio } from '../data/portfolio';
 import { fadeUp, stagger } from '../utils/motion';
 
 export const Skills = () => (
-  <Section id="skills" eyebrow="Skills" title="A practical stack for polished, scalable products.">
-    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+  <Section id="skills" eyebrow="Skills" title="Technical skills organized for full-stack delivery.">
+    <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
       {portfolio.skills.map((group) => (
         <motion.div key={group.group} variants={fadeUp} whileHover={{ y: -8, scale: 1.01 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }} className="rounded-brand border border-line bg-panel p-6 shadow-card">
           <h3 className="mb-5 text-xl font-semibold text-white">{group.group}</h3>

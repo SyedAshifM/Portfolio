@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
-import { ExternalLink, Github, X } from 'lucide-react';
+import { CheckCircle2, ExternalLink, Github, X } from 'lucide-react';
 import { useEffect } from 'react';
 import type { Project } from '../data/portfolio';
 
@@ -69,6 +69,17 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                 </h3>
               </div>
               <p className="text-base leading-8 text-zinc-300">{project.details}</p>
+              <div>
+                <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">Key Contributions</h4>
+                <ul className="grid gap-3 text-sm leading-6 text-zinc-300 sm:grid-cols-2">
+                  {project.features.map((feature) => (
+                    <li key={feature} className="flex gap-2">
+                      <CheckCircle2 size={16} className="mt-1 shrink-0 text-accent" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((item) => (
                   <span key={item} className="rounded-full border border-line bg-white/[0.04] px-3 py-1 text-sm text-zinc-300">

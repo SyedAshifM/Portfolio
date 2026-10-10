@@ -5,7 +5,7 @@ import { portfolio } from '../data/portfolio';
 import { fadeUp } from '../utils/motion';
 
 export const Experience = () => (
-  <Section id="experience" eyebrow="Experience" title="Enterprise product work with a frontend craft lens.">
+  <Section id="experience" eyebrow="Experience" title="Enterprise software development experience.">
     <div className="relative mx-auto max-w-4xl">
       <div className="absolute bottom-0 left-5 top-0 w-px bg-line sm:left-8" />
       {portfolio.experience.map((item) => (

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Maximize2 } from 'lucide-react';
+import { CheckCircle2, ExternalLink, Github, Maximize2 } from 'lucide-react';
 import { useState } from 'react';
 import { ProjectModal } from '../components/ProjectModal';
 import { Section } from '../components/Section';
@@ -39,6 +39,14 @@ export const Projects = () => {
                 <h3 className={isTwoProjectLayout ? 'mt-2 text-3xl font-semibold text-white' : 'mt-2 text-2xl font-semibold text-white'}>{project.title}</h3>
               </div>
               <p className={isTwoProjectLayout ? 'text-lg leading-8 text-zinc-300' : 'leading-7 text-zinc-300'}>{project.description}</p>
+              <ul className="grid gap-2 text-sm leading-6 text-zinc-300">
+                {project.features.slice(0, 3).map((feature) => (
+                  <li key={feature} className="flex gap-2">
+                    <CheckCircle2 size={16} className="mt-1 shrink-0 text-accent" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((item) => (
                   <span key={item} className="rounded-full border border-line bg-white/[0.04] px-3 py-1 text-xs text-zinc-300">

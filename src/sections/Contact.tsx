@@ -45,16 +45,16 @@ export const Contact = () => {
   };
 
   return (
-    <Section id="contact" eyebrow="Contact" title="Tell me what you are building.">
+    <Section id="contact" eyebrow="Contact" title="Let's Work Together">
       <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
         <motion.div variants={fadeUp} initial="hidden" whileInView="visible" viewport={{ once: true }} className="rounded-brand border border-line bg-panel p-6 shadow-card sm:p-8">
-          <p className="text-lg leading-8 text-zinc-300">I’m happy to talk through frontend systems, enterprise workflows, polished UI, or the next product experience on your roadmap.</p>
+          <p className="text-lg leading-8 text-zinc-300">I’m open to software development roles and full-stack product work involving React, Angular, Node.js, APIs, databases, and enterprise workflows.</p>
           <div className="mt-8 grid gap-4">
             {([
               [Mail, portfolio.email, `mailto:${portfolio.email}`],
               [Linkedin, 'LinkedIn', portfolio.linkedin],
               [Github, 'GitHub', portfolio.github],
-              [MapPin, portfolio.location, null],
+              [MapPin, portfolio.location, `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(portfolio.location)}`],
             ] satisfies ContactItem[]).map(([Icon, label, href]) => (
               <div key={label} className="group flex items-center gap-3 text-zinc-300 transition">
                 <span className="grid size-11 place-items-center rounded-full border border-line bg-white/[0.04] text-accent">

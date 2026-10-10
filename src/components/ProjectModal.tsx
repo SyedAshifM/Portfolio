@@ -17,6 +17,17 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     return () => document.removeEventListener('keydown', onKeyDown);
   }, [onClose]);
 
+  useEffect(() => {
+    if (!project) return;
+
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [project]);
+
   return (
     <AnimatePresence>
       {project && (
@@ -31,12 +42,13 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
           onMouseDown={onClose}
         >
           <motion.div
-            className="max-h-[90vh] w-full max-w-3xl overflow-auto rounded-brand border border-line bg-panel shadow-card"
+            className="max-h-[90vh] w-full max-w-3xl overflow-auto overscroll-contain rounded-brand border border-line bg-panel shadow-card"
             initial={{ opacity: 0, scale: 0.94, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 20 }}
             transition={{ duration: 0.22 }}
             onMouseDown={(event) => event.stopPropagation()}
+            onWheel={(event) => event.stopPropagation()}
           >
             <div className="relative aspect-[16/9] overflow-hidden rounded-t-brand">
               <img src={project.image} alt="" className="h-full w-full object-cover" loading="lazy" />

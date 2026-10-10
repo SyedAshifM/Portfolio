@@ -56,16 +56,16 @@ export const Contact = () => {
               [Github, 'GitHub', portfolio.github],
               [MapPin, portfolio.location, null],
             ] satisfies ContactItem[]).map(([Icon, label, href]) => (
-              <div key={label} className="flex items-center gap-3 text-zinc-300">
+              <div key={label} className="group flex items-center gap-3 text-zinc-300 transition">
                 <span className="grid size-11 place-items-center rounded-full border border-line bg-white/[0.04] text-accent">
                   <Icon size={18} />
                 </span>
                 {href ? (
-                  <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="transition hover:text-white">
+                  <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="contact-link transition hover:text-accent">
                     {label}
                   </a>
                 ) : (
-                  <span>{label}</span>
+                  <span className="contact-link transition group-hover:text-accent">{label}</span>
                 )}
               </div>
             ))}

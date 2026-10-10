@@ -204,6 +204,11 @@ button {
   border-color: rgba(15, 23, 42, 0.12) !important;
 }
 
+.theme-light .contact-link:hover,
+.theme-light .group:hover .contact-link {
+  color: #06b6d4 !important;
+}
+
 @keyframes float {
   0%,
   100% {
